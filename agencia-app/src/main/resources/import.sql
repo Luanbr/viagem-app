@@ -1,5 +1,6 @@
-CREATE SEQUENCE hibernate_sequence start with 1 increment by 1;
-INSERT INTO Client(id, name) VALUES (nextval('hibernate_sequence'), 'João');
-INSERT INTO Client(id, name) VALUES (nextval('hibernate_sequence'), 'Maria');
-INSERT INTO Client(id, name) VALUES (nextval('hibernate_sequence'), 'José');
-INSERT INTO Client(id, name) VALUES (nextval('hibernate_sequence'), 'Ana');
+--CREATE SEQUENCE hibernate_sequence start with 1 increment by 1;
+INSERT INTO Client (id, name) VALUES (1, 'João');
+INSERT INTO Client (id, name) VALUES (2, 'Maria');
+INSERT INTO Client (id, name) VALUES (3, 'José');
+INSERT INTO Client (id, name) VALUES (4, 'Ana');
+ALTER SEQUENCE client_seq RESTART WITH 5;

@@ -30,10 +30,12 @@ public class ClientResource {
         Client.deleteById(id);
     }
 
-    @Transactional
+
+
+    @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @POST
+    @Transactional
     public Response newClient(Client client) {
         client.id = null;
         client.persist();
