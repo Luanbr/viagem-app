@@ -1,6 +1,6 @@
 package com.luanbr.book;
 
-import com.luanbr.client.Client;
+import com.luanbr.client.ClientService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -15,11 +15,15 @@ public class BookResource {
     @RestClient
     BookService bookService;
 
+    @Inject
+    @RestClient
+    ClientService clientService;
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("newBook")
     public String newBook() {
-        var client = Client.of(2, null);
-        return bookService.newBook(client);
+        var client = clientService.findById(2);
+        var book = Book.of(client);
+        return bookService.newBook(book);
     }
 }

@@ -12,5 +12,5 @@ public interface BookService {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    String newBook(Client client);
+    String newBook(Book book);
 }

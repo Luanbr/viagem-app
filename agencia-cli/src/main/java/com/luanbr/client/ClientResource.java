@@ -20,4 +20,10 @@ public class ClientResource {
 
         return Response.status(Response.Status.CREATED).entity(response).build();
     }
+
+    @GET
+    @Path("findById")
+    public Client findById(long id) {
+        return clientService.findById(id);
+    }
 }

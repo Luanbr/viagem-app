@@ -5,6 +5,8 @@ import com.luanbr.client.Client;
 public class Book {
     private Client client;
 
+    private long id;
+
     private Book(Client client) {
         this.client = client;
     }
@@ -19,5 +21,11 @@ public class Book {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public long getId(){return this.id;}
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
